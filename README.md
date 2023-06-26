@@ -1,2 +1,2 @@
 # k6-actions
-whitel label to run k6 using github actions
+Latest html status report published: https://erik-amaral.github.io/k6-actions/
