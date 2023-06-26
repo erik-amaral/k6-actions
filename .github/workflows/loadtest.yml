@@ -1,5 +1,7 @@
 name: Basic Workflow
 on: [push]
+permissions:
+  contents: write
 
 jobs:
   k6_local_test:
@@ -21,3 +23,10 @@ jobs:
         with:
             name: status report load test
             path: report
+
+      - name: Publish report
+        uses: peaceiris/actions-gh-pages@v3
+        with: 
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_branch: gh-pages
+            publish_dir: report
